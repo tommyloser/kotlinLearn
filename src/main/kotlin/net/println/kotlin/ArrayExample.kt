@@ -20,4 +20,5 @@ fun main(args: Array<String>) {
     println(arrayOfChar.joinToString())//char数字变string
     println(arrayOfInt.slice(1..2)) //分隔数组
 
+
 }
