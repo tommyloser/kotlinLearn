@@ -29,9 +29,10 @@ import java.io.FileReader
             2..5,
             100..322
     )
-
+// 遍历list, 每个element is list again, new List add all the element list
+//传入的lambda 表达式,传入一个element（list) 变成一个list
 //    val flatList = list.flatMap {intRange ->
-//        intRange.map {intElement ->
+//        intRange.map {intElement ->//list.map = list
 //            "No.$intElement"
 //        }
 //    }
@@ -66,10 +67,11 @@ fun main(args: Array<String>) {
 //    }
 //    println(person?.name)
 //    println(person?.age)
-//    val person = findPerson()?.apply {
-//        work()
-//        println(age)
-//    }
+    //with 跟apply 相似
+    val person = findPerson()?.apply {
+        work()
+        println(age)
+    }
 //    val br = BufferedReader(FileReader("hello.txt")).readText()
 //    println(br)
     val br = BufferedReader(FileReader("hello.txt")).use {
@@ -83,6 +85,9 @@ fun main(args: Array<String>) {
 
 }
 
+/**
+ * 1*1*2*3...*n
+ */
 fun factorial(n: Int):Int {
     if(n == 0) return 1
     return (1..n).reduce{acc, i -> acc * i }
