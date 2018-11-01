@@ -1,5 +1,8 @@
 package net.println.kotlin.Chapter5.currying
 
+import net.println.kotlin.Chapter5.compose.add5
+import net.println.kotlin.Chapter5.compose.andThen
+import net.println.kotlin.Chapter5.compose.multiplyBy2
 import java.io.OutputStream
 import java.nio.charset.Charset
 
@@ -36,6 +39,11 @@ fun main(args: Array<String>) {
 
     val bytes = "我是中国人".toByteArray(charset("GBK"))
     makeStringFromGbkBytes(bytes)
+
+    //导入三个函数，add5 andThen multiplyBy2
+    val add5AndMultiplyBy2 = add5 andThen multiplyBy2 //先算前面
+    println(add5AndMultiplyBy2(4))
+
 }
 
 //定义了3个参数版本的柯理化， 定义了一个Function3的扩展方法， 所有function3的函数都可以调用， 他返回一个柯理化的函数

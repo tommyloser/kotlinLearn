@@ -20,6 +20,9 @@ fun fibonacci():() -> Long{
     }
 }
 
+/**
+ * 返回fibonacci数列， 每调用一次数列就添加一位
+ */
 fun fibonaci():Iterable<Long>{
     var first = 0L
     var second = 1L
