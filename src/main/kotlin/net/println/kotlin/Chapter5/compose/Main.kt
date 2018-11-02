@@ -10,8 +10,8 @@ fun main(args: Array<String>) {
 
     val add5AndMultiplyBy2 = add5 andThen multiplyBy2 //先算前面
     val add5ComposeMultiplyBy2 = add5 compose  multiplyBy2 //先算后面
-    println(add5ComposeMultiplyBy2(8))//m(x) = f(g(x)) //8*2 +5 加5 之前* 2
     println(add5AndMultiplyBy2(8))//m(x) = g(f(x)) //8+5 * 2
+    println(add5ComposeMultiplyBy2(8))//m(x) = f(g(x)) //8*2 +5 加5 之前* 2
 }
 
 //复合函数 add5 = function1, multiplyby2 = function
