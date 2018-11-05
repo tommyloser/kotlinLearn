@@ -28,8 +28,8 @@ fun main(args: Array<String>) {
     val delegates = Delegates()
 
     println(delegates.hello)
-//    println(delegates.hello2)
-    println(delegates.hello3)
-    delegates.hello3 = "value of hello3"
-    println(delegates.hello3)
+    println(delegates.hello2)
+//    println(delegates.hello3)
+//    delegates.hello3 = "value of hello3"
+//    println(delegates.hello3)
 }

@@ -7,6 +7,15 @@ interface OnExternalDriverMountListerer{
     fun onUnmount(driver:Driverr)
 }
 
+//fun setListener(onExternalDriverMountListerer: OnExternalDriverMountListerer){
+//    val a = onExternalDriverMountListerer
+//}
+//
+//fun main(args: Array<String>) {
+//    val block = { println("aaa")}
+//    setListener(block)
+//
+//}
 abstract class Player
 
 object MusicPlayer: Player(),OnExternalDriverMountListerer{

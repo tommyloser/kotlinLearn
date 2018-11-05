@@ -9,6 +9,9 @@ class MainWindow: JFrame() {
     private lateinit var button:JButton
     private lateinit var image: JLabel
 
+    /**
+     * 这不是构造方法， 构造方法没有fun 关键字
+     */
     fun init() {
         button = JButton("点我获取腾讯网logo")
         image = JLabel()
