@@ -1,5 +1,6 @@
 package net.println.kotlin.Chapter7.ui
 
+import net.println.kotlin.Chapter7.async.DownloadContext
 import net.println.kotlin.Chapter7.async.我要开始加载图片了
 import net.println.kotlin.Chapter7.async.我要开始协程了
 import net.println.kotlin.Chapter7.async.我要开始耗时操作了
@@ -28,12 +29,16 @@ fun main(args: Array<String>) {
 
     frame.onButtonClick {
         log("协程之前")
-        我要开始协程了{
+        我要开始协程了(DownloadContext(LOGO_URL )){ // 传入一个带有url 属性的Context
             log("协程开始")
 //            val imageData = 我要开始加载图片了(LOGO_URL)
             //这里可以try catch
             val imageData = 我要开始耗时操作了 {
-                我要开始加载图片了(LOGO_URL)
+                /*
+                this[DownloadContext] 获得 DownloadContext实例
+                这个实例定义了一个url属性
+                 */
+                我要开始加载图片了(this[DownloadContext]!!.url)
             }
             log("拿到图片")
 

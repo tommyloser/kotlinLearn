@@ -48,7 +48,8 @@ import java.io.FileReader
 //        acc + i
 //    })
     //初始值
-//    println((0..6).map(::factorial).fold(StringBuilder()){ acc, i ->
+//    println((0..6).map(::factorial))
+//            .fold(StringBuilder()){ acc, i ->
 //                acc.append(i).append(",")
 //    })
 //    println((0..6).map(::factorial).filter{it % 2 == 1})
@@ -90,7 +91,16 @@ fun main(args: Array<String>) {
  */
 fun factorial(n: Int):Int {
     if(n == 0) return 1
+    //n = 2 -> ((1*1) * 2)
     return (1..n).reduce{acc, i -> acc * i }
+    //n = 2 -> ((2*1)*2)
+//    return (1..n).fold(2){acc, i -> acc * i }
+//    return (1..n).fold(2){acc, i ->
+//        println("打印acc:$acc + 和i:$i")
+//        acc}
+//    return (1..n).reduce{acc, i ->
+//        println("打印acc:$acc + 和i:$i")
+//        acc}
 }
 
 data class Person(val name:String, val age:Int){
